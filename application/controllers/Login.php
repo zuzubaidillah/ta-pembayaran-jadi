@@ -90,14 +90,13 @@ class Login extends CI_Controller {
 			$this->session->set_userdata($data_session);
 			switch ($level) {
 				case "admin":
-					redirect("login?pesan=selamat-datang-admin");
-					echo "Your favorite color is red!";
+					redirect("admin/dashboard?pesan=selamat-datang-admin");
 					break;
 				case "kepala sekolah":
-					echo "Your favorite color is blue!";
+					redirect("kepalasekolah/dashboard?pesan=selamat-datang-admin");
 					break;
 				default:
-					echo "Your favorite color is neither red, blue, nor green!";
+					redirect("bendahara/dashboard?pesan=selamat-datang-bendahara");
 			}
 		}else{
 			// pindah ke halaman login lagi
